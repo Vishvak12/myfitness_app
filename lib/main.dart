@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitness_app/navbar.dart';
 import 'package:myfitness_app/pages/dashboard.dart';
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData( fontFamily: 'Poppins'),
-      home:  HomePage()
+      home:  NavBar_Screen(title: "MyFitnessCoochie")
     );
   }
 }
