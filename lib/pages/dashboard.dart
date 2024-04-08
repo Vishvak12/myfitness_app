@@ -1,13 +1,9 @@
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myfitness_app/models/category_model.dart';
 
 class HomePage extends StatefulWidget {
-    HomePage({super.key});
+    const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -37,8 +33,8 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 40,),
           Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 210),
+              const Padding(
+                padding: EdgeInsets.only(right: 210),
                 child: Text(
                   'Category',
                   style: TextStyle(
@@ -48,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Container(
                 height:150,
                 child: ListView.builder(itemCount: categories.length,
@@ -98,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      VerticalDivider(
+                      const VerticalDivider(
                         color: Colors.black,
                         indent:10,
                         endIndent: 10,
@@ -126,7 +122,7 @@ class _HomePageState extends State<HomePage> {
   AppBar appBar() {
     return AppBar(
       title: const Text(
-        'Breakfast',
+        'Today',
         style: TextStyle(
           color: Colors.black,
           fontSize: 18,
