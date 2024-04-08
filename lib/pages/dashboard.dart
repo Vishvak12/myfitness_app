@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 40,),
           Column(
             children: [
-              Padding(
+              const Padding(
                 padding: const EdgeInsets.only(right: 210),
                 child: Text(
                   'Category',
