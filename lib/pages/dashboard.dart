@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
   AppBar appBar() {
     return AppBar(
       title: const Text(
-        'Today',
+        "Today's Plan",
         style: TextStyle(
           color: Colors.black,
           fontSize: 18,
