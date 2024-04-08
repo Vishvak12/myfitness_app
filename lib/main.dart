@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfitness_app/pages/home.dart';
+//HELLO THIS IS A COMMENT
 void main() {
   runApp(const MyApp());
 }
