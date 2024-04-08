@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myfitness_app/models/category_model.dart';
-
+//niggamoneyhaiiiiiiiiiiiiiiiii
 class HomePage extends StatefulWidget {
     const HomePage({super.key});
 
