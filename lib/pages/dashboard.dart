@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myfitness_app/models/category_model.dart';
@@ -126,7 +122,7 @@ class _HomePageState extends State<HomePage> {
   AppBar appBar() {
     return AppBar(
       title: const Text(
-        'Breakfast',
+        'Today',
         style: TextStyle(
           color: Colors.black,
           fontSize: 18,
