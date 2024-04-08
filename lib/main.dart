@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myfitness_app/pages/home.dart';
-//HELLO THIS IS A COMMENT
+import 'package:myfitness_app/pages/dashboard.dart';
 void main() {
   runApp(const MyApp());
 }
-
+// HELLO THIS IS A COMMENT wassup bitch
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData( fontFamily: 'Poppins'),
-      home: HomePage()
+      home:  HomePage()
     );
   }
 }
