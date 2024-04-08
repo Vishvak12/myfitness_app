@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:myfitness_app/pages/dashboard.dart';
-=======
-import 'package:myfitness_app/pages/home.dart';
->>>>>>> b1a2e30829896f125b38f607473ac3fb635a5272
 void main() {
   runApp(const MyApp());
 }
-
+// HELLO THIS IS A COMMENT
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -17,11 +13,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData( fontFamily: 'Poppins'),
-<<<<<<< HEAD
       home:  HomePage()
-=======
-      home: HomePage()
->>>>>>> b1a2e30829896f125b38f607473ac3fb635a5272
     );
   }
 }
