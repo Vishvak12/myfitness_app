@@ -30,14 +30,15 @@ class _HomePageState extends State<HomePage> {
       appBar: appBar(),
       backgroundColor: Colors.white,
       body: Column(
-        crossAxisAlignment :CrossAxisAlignment.start,
+        
         children: [
           _searchField(),
           SizedBox(height: 40,),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.only(right: 210),
+                padding: EdgeInsets.only(left:20),
                 child: Text(
                   'New Category',
                   style: TextStyle(
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 15,),
-              Container(
+              SizedBox(
                 height:150,
                 child: ListView.builder(itemCount: categories.length,
                   itemBuilder: 
@@ -65,11 +66,11 @@ class _HomePageState extends State<HomePage> {
 
   Container _searchField() {
     return Container(
-          margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+          margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Color(0xff1D1617).withOpacity(0.11),
+                color: const Color(0xff1D1617).withOpacity(0.11),
                 blurRadius: 40, 
                 spreadRadius: 0.0,
               ),
@@ -80,9 +81,9 @@ class _HomePageState extends State<HomePage> {
             decoration: InputDecoration(
               filled:true,
               fillColor: Colors.white,
-              contentPadding: EdgeInsets.all(15),
+              contentPadding: const EdgeInsets.all(15),
               hintText: 'Search for healthy meals...',
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                 color: Color(0xffA1A5A6),
                 fontSize: 14),
               prefixIcon: Padding(
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                   'assets/icons/Search.svg',
                 ),
               ),
-              suffixIcon: Container(
+              suffixIcon: SizedBox(
                 width: 100,
                 child: IntrinsicHeight(
                   child: Row(
