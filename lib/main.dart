@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData( fontFamily: 'Poppins'),
-      home:  NavBar_Screen(title: "MyFitnessCoochie")
+      home:  const NavBar_Screen(title: "MyFitnessCoochie")
     );
   }
 }

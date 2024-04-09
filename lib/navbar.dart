@@ -18,8 +18,8 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
 
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.chat_outlined),
-      title: ("Activites"),
+      icon: const Icon(Icons.sports_martial_arts_outlined),
+      title: ("Activities"),
       activeColorPrimary: Colors.black,
       inactiveColorPrimary: Colors.grey,
     ),
@@ -35,13 +35,14 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
       inactiveColorPrimary: Colors.grey,
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.settings),
+      icon: const Icon(Icons.more_horiz_outlined),
       title: ("More"),
       activeColorPrimary: Colors.black,
       inactiveColorPrimary: Colors.grey,
     ),
   ];
 }
+
 
 class NavBar_Screen extends StatefulWidget {
   const NavBar_Screen({super.key, required this.title});
@@ -86,7 +87,7 @@ class _NavBar_ScreenState extends State<NavBar_Screen> {
       hideNavigationBarWhenKeyboardShows: true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
       decoration: NavBarDecoration(
         boxShadow: [BoxShadow(color: Colors.grey[300] as Color, spreadRadius: 0, blurRadius: 2)],
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         colorBehindNavBar: Colors.white,
       ),
       popAllScreensOnTapOfSelectedTab: true,
