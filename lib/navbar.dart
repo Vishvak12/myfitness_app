@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:myfitness_app/pages/dashboard.dart';
 
@@ -28,7 +29,7 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
       inactiveColorPrimary: Colors.black,
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.camera),
+      icon: const Icon(SvgPicture.asset(assetName)),
       title: 'Scan Meal',
       activeColorPrimary: Colors.black,
       inactiveColorPrimary: Colors.grey,
