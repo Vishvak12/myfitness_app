@@ -29,7 +29,7 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
       inactiveColorPrimary: Colors.black,
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(SvgPicture.asset(assetName)),
+      icon: const Icon(Icons.camera_alt_outlined),
       title: 'Scan Meal',
       activeColorPrimary: Colors.black,
       inactiveColorPrimary: Colors.grey,
