@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
           fontSize: 18,
           fontWeight: FontWeight.bold,),
       ),
-      centerTitle: true,
+      
       leading: GestureDetector(
         onTap: () {
         },
