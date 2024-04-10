@@ -183,8 +183,33 @@ class _HomePageState extends State<HomePage> {
   }
   
 String _getFormattedDate() {
-  // Get the current date and format it as desired
+  // Get the current date
   DateTime now = DateTime.now();
-  String formattedDate = "${now.year}-${now.month}-${now.day}";
+  
+  // Format the date
+  String formattedDate = "${_getDayName(now.weekday)}, ${now.day}";
+  
   return formattedDate;
+}
+
+String _getDayName(int day) {
+  // Get the day name based on the day of the week
+  switch (day) {
+    case 1:
+      return 'Monday';
+    case 2:
+      return 'Tuesday';
+    case 3:
+      return 'Wednesday';
+    case 4:
+      return 'Thursday';
+    case 5:
+      return 'Friday';
+    case 6:
+      return 'Saturday';
+    case 7:
+      return 'Sunday';
+    default:
+      return '';
+  }
 }}
