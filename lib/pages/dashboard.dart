@@ -124,14 +124,27 @@ class _HomePageState extends State<HomePage> {
         );
   }
   AppBar appBar() {
-    return AppBar(
-      title: const Text(
-        "Today's Plan",
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,),
-      ),
+  return AppBar(
+    title: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          "Today's Plan",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          _getFormattedDate(), // Call function to get the formatted date
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+          ),
+        ),
+      ],
+    ),
       
       leading: GestureDetector(
         onTap: () {
@@ -168,4 +181,10 @@ class _HomePageState extends State<HomePage> {
     )],
       );
   }
-}
+  
+String _getFormattedDate() {
+  // Get the current date and format it as desired
+  DateTime now = DateTime.now();
+  String formattedDate = "${now.year}-${now.month}-${now.day}";
+  return formattedDate;
+}}
