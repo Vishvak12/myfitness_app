@@ -187,7 +187,7 @@ String _getFormattedDate() {
   DateTime now = DateTime.now();
   
   // Format the date
-  String formattedDate = "${_getDayName(now.weekday)}, ${now.day}";
+  String formattedDate = "${_getDayName(now.weekday)}, ${now.day} ${_getMonth(now.month)}";
   
   return formattedDate;
 }
@@ -212,4 +212,36 @@ String _getDayName(int day) {
     default:
       return '';
   }
-}}
+}
+String _getMonth(int month) {
+  // Get the month name based on the month number
+  switch (month) {
+    case 1:
+      return 'January';
+    case 2:
+      return 'February';
+    case 3:
+      return 'March';
+    case 4:
+      return 'April';
+    case 5:
+      return 'May';
+    case 6:
+      return 'June';
+    case 7:
+    return 'July';
+      case 8:
+      return 'August';
+    case 9:
+      return 'September';
+    case 10:
+      return 'October';
+    case 11:
+      return 'November';
+    case 12:
+      return 'December';
+    default:
+      return '';
+    }
+  }
+}
