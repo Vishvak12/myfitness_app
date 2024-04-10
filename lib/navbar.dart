@@ -36,8 +36,7 @@ class _NavBar_ScreenState extends State<NavBar_Screen> {
 
     controller = PersistentTabController(initialIndex: 0);
 
-    return Scaffold(
-        body: PieCanvas(
+    return PieCanvas(
           theme: const PieTheme(
             delayDuration: Duration.zero,
             tooltipTextStyle: TextStyle(
@@ -84,8 +83,7 @@ class _NavBar_ScreenState extends State<NavBar_Screen> {
             ),
             navBarStyle: NavBarStyle.style17,
           ),
-        ),
-    );
+        );
   }
 }
 

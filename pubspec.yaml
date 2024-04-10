@@ -35,6 +35,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   url_launcher: ^6.2.5
   persistent_bottom_nav_bar: any
+  syncfusion_flutter_charts: ^25.1.39+1
 
 dev_dependencies:
   flutter_test:

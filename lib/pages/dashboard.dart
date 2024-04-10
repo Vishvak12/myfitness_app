@@ -3,7 +3,24 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myfitness_app/models/category_model.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 final Uri _url = Uri.parse('https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D');
+
+
+List<ChartData> chartData = [
+  ChartData('A', 50),
+  ChartData('B', 30),
+  ChartData('C', 20),
+  ChartData('D', 10),
+];
+
+class ChartData {
+  final String x;
+  final int y;
+
+  ChartData(this.x, this.y);
+}
+
 class HomePage extends StatefulWidget {
     const HomePage({super.key});
 
@@ -26,8 +43,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     _getCategories();
-    
+
+
     return Scaffold(
+
       appBar: appBar(),
       backgroundColor: Colors.white,
       body: Column(
@@ -57,7 +76,20 @@ class _HomePageState extends State<HomePage> {
                 (context, index){
                   return Container();
                 }),
-              )
+              ),
+              Center(
+                  child:
+                     SfCircularChart(
+                          series: <CircularSeries>[
+                            // Renders radial bar chart
+                            RadialBarSeries<ChartData, String>(
+                                dataSource: chartData,
+                                xValueMapper: (ChartData data, _) => data.x,
+                                yValueMapper: (ChartData data, _) => data.y
+                            )
+                          ]
+                      )
+                  )
             ],
           )
         ],
