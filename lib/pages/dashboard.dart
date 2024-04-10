@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myfitness_app/models/category_model.dart';
-
+final Uri _url = Uri.parse('https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D');
 class HomePage extends StatefulWidget {
     const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
+  
 }
 
 class _HomePageState extends State<HomePage> {
@@ -133,7 +134,8 @@ class _HomePageState extends State<HomePage> {
       ),
       centerTitle: true,
       leading: GestureDetector(
-        onTap: (){},
+        onTap: () {
+        },
         child: Container(
           margin: const EdgeInsets.all(10),
           alignment: Alignment.center,
