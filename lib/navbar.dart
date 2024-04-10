@@ -1,47 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+//import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:myfitness_app/pages/dashboard.dart';
+import 'package:pie_menu/pie_menu.dart';
 
 List<Widget> _buildScreens() {
   return [ const HomePage(),
   const HomePage(),const HomePage(),const HomePage(),const HomePage(),
   ];
 }
-List<PersistentBottomNavBarItem> _navBarsItems() {
-  return [
-    PersistentBottomNavBarItem(
-      icon: const Icon(Icons.home_outlined),
-      title: ("Home"),
-      activeColorPrimary: Colors.black,
-      inactiveColorPrimary: Colors.grey,
 
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(Icons.chat_outlined),
-      title: ("Activites"),
-      activeColorPrimary: Colors.black,
-      inactiveColorPrimary: Colors.grey,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(Icons.add,color:Colors.black),
-      activeColorPrimary: Colors.teal,
-      inactiveColorPrimary: Colors.black,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(Icons.camera_alt_outlined),
-      title: 'Scan Meal',
-      activeColorPrimary: Colors.black,
-      inactiveColorPrimary: Colors.grey,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(Icons.settings),
-      title: ("More"),
-      activeColorPrimary: Colors.black,
-      inactiveColorPrimary: Colors.grey,
-    ),
-  ];
-}
 
 class NavBar_Screen extends StatefulWidget {
   const NavBar_Screen({super.key, required this.title});
@@ -67,40 +35,109 @@ class _NavBar_ScreenState extends State<NavBar_Screen> {
     PersistentTabController controller;
 
     controller = PersistentTabController(initialIndex: 0);
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return PersistentTabView(
-      context,
-      controller: controller,
-      screens: _buildScreens(),
-      items: _navBarsItems(),
-      confineInSafeArea: true,
-      backgroundColor: Colors.white, // Default is Colors.white.
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset: true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows: true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-      decoration: NavBarDecoration(
-        boxShadow: [BoxShadow(color: Colors.grey[300] as Color, spreadRadius: 0, blurRadius: 2)],
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        colorBehindNavBar: Colors.white,
-      ),
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: const ItemAnimationProperties( // Navigation Bar's items animation properties.
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: const ScreenTransitionAnimation( // Screen transition animation on change of selected tab.
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
-      navBarStyle: NavBarStyle.style17, // Choose the nav bar style with this property.
+
+    return Scaffold(
+        body: PieCanvas(
+          theme: const PieTheme(
+            delayDuration: Duration.zero,
+            tooltipTextStyle: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.w600,
+            ),
+            buttonTheme: PieButtonTheme(
+              backgroundColor: Colors.deepOrange,
+              iconColor: Colors.white,
+            ),
+            buttonThemeHovered: PieButtonTheme(
+              backgroundColor: Colors.orangeAccent,
+              iconColor: Colors.black,
+            ),
+            brightness: Brightness.dark,
+          ),
+
+          child: PersistentTabView(
+            context,
+            controller: controller,
+            screens: _buildScreens(),
+            items: _navBarsItems(context),
+            confineInSafeArea: true,
+            backgroundColor: Colors.white,
+            handleAndroidBackButtonPress: true,
+            resizeToAvoidBottomInset: true,
+            stateManagement: true,
+            hideNavigationBarWhenKeyboardShows: true,
+            decoration: NavBarDecoration(
+              boxShadow: [BoxShadow(color: Colors.grey[300] as Color, spreadRadius: 0, blurRadius: 2)],
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+              colorBehindNavBar: Colors.white,
+            ),
+            popAllScreensOnTapOfSelectedTab: true,
+            popActionScreens: PopActionScreensType.all,
+            itemAnimationProperties: const ItemAnimationProperties(
+              duration: Duration(milliseconds: 200),
+              curve: Curves.ease,
+            ),
+            screenTransitionAnimation: const ScreenTransitionAnimation(
+              animateTabTransition: true,
+              curve: Curves.ease,
+              duration: Duration(milliseconds: 200),
+            ),
+            navBarStyle: NavBarStyle.style17,
+          ),
+        ),
     );
   }
+}
+
+List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
+  return [
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.home_outlined),
+      title: ("Home"),
+      activeColorPrimary: Colors.black,
+      inactiveColorPrimary: Colors.grey,
+    ),
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.sports_martial_arts_outlined),
+      title: ("Activities"),
+      activeColorPrimary: Colors.black,
+      inactiveColorPrimary: Colors.grey,
+    ),
+    PersistentBottomNavBarItem(
+      icon: PieMenu(
+        actions: [
+          PieAction(
+            tooltip: const Text('Add Activity'),
+            onSelect: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Add Activity'))),
+            child: const Icon(Icons.directions_run),
+          ),
+          PieAction(
+            tooltip: const Text('Add Meal'),
+            onSelect: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Add Meal'))),
+            child: const Icon(Icons.fastfood),
+          ),
+          PieAction(
+            tooltip: const Text('Add Water Intake'),
+            onSelect: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Add Water Intake'))),
+            child: const Icon(Icons.local_drink),
+          ),
+        ],
+        child: const Icon(Icons.add),
+      ),
+      activeColorPrimary: Colors.teal,
+      inactiveColorPrimary: Colors.black,
+    ),
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.camera_alt_outlined),
+      title: 'Scan Meal',
+      activeColorPrimary: Colors.black,
+      inactiveColorPrimary: Colors.grey,
+    ),
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.more_horiz_outlined),
+      title: ("More"),
+      activeColorPrimary: Colors.black,
+      inactiveColorPrimary: Colors.grey,
+    ),
+  ];
 }

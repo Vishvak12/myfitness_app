@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         
         children: [
           _searchField(),
-          SizedBox(height: 40,),
+          const SizedBox(height: 40,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
             height:20,
             width: 20,),
           decoration: BoxDecoration(
-            color:Color(0xffF7F8F8),
+            color:const Color(0xffF7F8F8),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
