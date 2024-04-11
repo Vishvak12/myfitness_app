@@ -36,6 +36,9 @@ dependencies:
   url_launcher: ^6.2.5
   persistent_bottom_nav_bar: any
   syncfusion_flutter_charts: ^25.1.39+1
+  camera: ^0.10.5+9
+  path_provider: ^2.1.2
+  path: ^1.9.0
 
 dev_dependencies:
   flutter_test:

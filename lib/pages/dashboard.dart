@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:myfitness_app/models/category_model.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -21,15 +19,15 @@ class ChartData {
   ChartData(this.x, this.y);
 }
 
-class HomePage extends StatefulWidget {
-    const HomePage({super.key});
+class DashBoard extends StatefulWidget {
+    const DashBoard({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<DashBoard> createState() => _DashBoardState();
   
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashBoardState extends State<DashBoard> {
   List<CategoryModel> categories = [];
 
   void _getCategories(){
@@ -171,7 +169,7 @@ class _HomePageState extends State<HomePage> {
         ),
         Text(
           _getFormattedDate(), // Call function to get the formatted date
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 14,
           ),
@@ -180,38 +178,23 @@ class _HomePageState extends State<HomePage> {
     ),
       
       leading: GestureDetector(
-        onTap: () {
+        onTap: () { 
+          
         },
         child: Container(
           margin: const EdgeInsets.all(10),
           alignment: Alignment.center,
-          child:SvgPicture.asset(
-            'assets/icons/Arrow - Left 2.svg',
-            height:20,
-            width: 20,),
           decoration: BoxDecoration(
             color:const Color(0xffF7F8F8),
             borderRadius: BorderRadius.circular(10),
           ),
+          child:SvgPicture.asset(
+            'assets/icons/Arrow - Left 2.svg',
+            height:20,
+            width: 20,),
         ),
       ),
-    actions: [
-      GestureDetector(
-        onTap: (){
-
-        },
-        child: Container(
-        margin: const EdgeInsets.all(10),
-        alignment: Alignment.center,
-        width: 37,
-        child:SvgPicture.asset(
-          'assets/icons/dots.svg',
-       height:5,
-       width: 5,),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10)),
-        ),
-    )],
+    
       );
   }
   
