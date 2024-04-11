@@ -70,26 +70,27 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 15,),
               SizedBox(
-                height:150,
-                child: ListView.builder(itemCount: categories.length,
-                  itemBuilder: 
-                (context, index){
-                  return Container();
-                }),
+              height: 300,
+              
+              child: Padding(
+                padding: const EdgeInsets.only(right: 150),
+                child: Center(
+                    child:
+                       SfCircularChart(
+                            series: <CircularSeries>[
+                              // Renders radial bar chart
+                              RadialBarSeries<ChartData, String>(
+                                  dataSource: chartData,
+                                  xValueMapper: (ChartData data, _) => data.x,
+                                  yValueMapper: (ChartData data, _) => data.y,
+                                  cornerStyle: CornerStyle.bothCurve,
+                              )
+                            ]
+                        )
+                    ),
               ),
-              Center(
-                  child:
-                     SfCircularChart(
-                          series: <CircularSeries>[
-                            // Renders radial bar chart
-                            RadialBarSeries<ChartData, String>(
-                                dataSource: chartData,
-                                xValueMapper: (ChartData data, _) => data.x,
-                                yValueMapper: (ChartData data, _) => data.y
-                            )
-                          ]
-                      )
-                  )
+                            ),
+              
             ],
           )
         ],
