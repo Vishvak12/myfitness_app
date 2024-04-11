@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               const Padding(
                 padding: EdgeInsets.only(left:20),
                 child: Text(
-                  'New Category',
+                  'Quick Overview',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
@@ -85,7 +85,18 @@ class _HomePageState extends State<HomePage> {
                             RadialBarSeries<ChartData, String>(
                                 dataSource: chartData,
                                 xValueMapper: (ChartData data, _) => data.x,
-                                yValueMapper: (ChartData data, _) => data.y
+                                yValueMapper: (ChartData data, _) => data.y,
+                                cornerStyle: CornerStyle.bothCurve,
+                                innerRadius: '38%',
+                                dataLabelSettings: const DataLabelSettings(
+                                 isVisible: false,
+                                 labelPosition: ChartDataLabelPosition.inside,
+                                 textStyle: TextStyle(
+                                   fontSize: 14,
+                                   fontWeight: FontWeight.bold,
+                                   color: Colors.black,
+                                    ),
+                                ),
                             )
                           ]
                       )
