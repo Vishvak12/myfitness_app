@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfitness_app/navbar.dart';
+import 'package:myfitness_app/pages/camera.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData( fontFamily: 'Poppins'),
-      home:  const NavBar_Screen(title: "MyFitnessCoochie")
+      home:  const NavBar_Screen(title: "MyFitnessCoochie"),
+      routes: {
+        '/camera': (context) => const CameraPage(),
+      },
     );
   }
 }
