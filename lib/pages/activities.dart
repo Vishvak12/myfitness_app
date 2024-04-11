@@ -22,6 +22,7 @@ class ActivitiesPage extends StatelessWidget {
 
   AppBar appBar() {
     return AppBar(
+      backgroundColor: const Color(0xFFFF9000),
       title: const Column(
         children: [
           Text('Activities',
@@ -32,7 +33,9 @@ class ActivitiesPage extends StatelessWidget {
           ),),
         ],
       ),leading: GestureDetector(
-        onTap: () {
+        onTap: (
+
+            ) {
             
         },
         child: Container(
