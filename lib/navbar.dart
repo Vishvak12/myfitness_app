@@ -5,8 +5,7 @@ import 'package:myfitness_app/pages/dashboard.dart';
 import 'package:pie_menu/pie_menu.dart';
 
 List<Widget> _buildScreens() {
-  return [ const HomePage(),
-  const HomePage(),const HomePage(),const HomePage(),const HomePage(),
+  return [ const HomePage(),const HomePage(),const HomePage(),const HomePage(),const HomePage(),
   ];
 }
 
@@ -112,12 +111,12 @@ List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
           ),
           PieAction(
             tooltip: const Text('Add Meal'),
-            onSelect: () => null ,
+            onSelect: () => null,
             child: const Icon(Icons.fastfood),
           ),
           PieAction(
             tooltip: const Text('Add Water Intake'),
-            onSelect: () => null ,
+            onSelect: () => null,
             child: const Icon(Icons.local_drink),
           ),
         ],

@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               const Padding(
                 padding: EdgeInsets.only(left:20),
                 child: Text(
-                  'New Category',
+                  'Quick Overview',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
