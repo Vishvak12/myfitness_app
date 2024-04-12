@@ -27,7 +27,7 @@ Future<void> _openCamera() async {
         camera: firstCamera,
         ),
       ),
-      ); 
+    );
 }
 
 class CameraPage extends StatefulWidget {
