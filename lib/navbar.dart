@@ -11,7 +11,7 @@ import 'package:pie_menu/pie_menu.dart';
 
 
 List<Widget> _buildScreens() {
-  return [ const DashBoard(),const ActivitiesPage(),Container(),const CameraPage(), DashBoard(),
+  return [ const DashBoard(),const ActivitiesPage(),Container(),const CameraPage(), const DashBoard(),
   ];
 }
 
@@ -132,7 +132,7 @@ List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
         ],
         child: const Icon(Icons.add),
       ),
-      activeColorPrimary: Colors.teal,
+      activeColorPrimary: const Color(0xFFFF9000),
       inactiveColorPrimary: Colors.black,
     ),
     PersistentBottomNavBarItem(

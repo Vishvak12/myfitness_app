@@ -27,6 +27,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
 
   AppBar appBar() {
     return AppBar(
+      backgroundColor: const Color(0xFFFF9000),
       title: const Column(
         children: [
           Text('Activities',
@@ -36,9 +37,10 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             fontWeight: FontWeight.bold,
           ),),
         ],
-      ),
-      leading: GestureDetector(
-        onTap: () {
+      ),leading: GestureDetector(
+        onTap: (
+
+            ) {
             
         },
         child: Container(
