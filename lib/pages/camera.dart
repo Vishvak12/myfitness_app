@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:myfitness_app/navbar.dart';
+import 'package:myfitness_app/pages/dashboard.dart';
 
 Future<void> _openCamera() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
@@ -16,9 +18,15 @@ Future<void> _openCamera() async {
   final firstCamera = cameras.first;
 
   
-       TakePictureScreen(
+       runApp(
+    MaterialApp(
+      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      home: TakePictureScreen(
         // Pass the appropriate camera to the TakePictureScreen widget.
         camera: firstCamera,
+        ),
+      ),
       ); 
 }
 
@@ -38,7 +46,8 @@ class _CameraPageState extends State<CameraPage> {
   @override
   Widget build(BuildContext context) {
    _openCamera();
-    return const Scaffold(
+    return  const Scaffold(
+      
       body: Center(
         child: CircularProgressIndicator(),
       ),
@@ -89,10 +98,17 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Take a picture')),
-      // You must wait until the controller is initialized before displaying the
-      // camera preview. Use a FutureBuilder to display a loading spinner until the
-      // controller has finished initializing.
+      appBar: AppBar(title: const Text('Take a picture'),
+      
+        leading:BackButton(
+          onPressed: () async => await Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const NavBar_Screen(title:"Dashboard"),
+                ),
+              ) 
+        )
+      ),
+      
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {

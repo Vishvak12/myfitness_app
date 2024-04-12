@@ -5,6 +5,11 @@ class ActivitiesPage extends StatelessWidget {
   const ActivitiesPage({super.key});
 
   @override
+  State<ActivitiesPage> createState() => _ActivitiesPageState();
+}
+
+class _ActivitiesPageState extends State<ActivitiesPage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
@@ -31,7 +36,8 @@ class ActivitiesPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),),
         ],
-      ),leading: GestureDetector(
+      ),
+      leading: GestureDetector(
         onTap: () {
             
         },
